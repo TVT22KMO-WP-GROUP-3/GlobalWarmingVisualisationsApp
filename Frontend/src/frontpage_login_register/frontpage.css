@@ -83,6 +83,7 @@ justify-content: center;
 
 }
 
+
 .viewoptions input {
     margin-top: 8px;
     margin-bottom: 10px;
@@ -113,3 +114,23 @@ justify-content: space-evenly;
   .centered{
     
   }
+  .dialogwindow{
+    background-color: #2c3333;
+    }
+    .dialogwindow #alert-dialog-description{
+        color: #e7f6f2;
+    }
+
+    .dialogactions {
+        background-color: #2c3333;
+    }
+    .dialogactions #dialogbutton{
+        color: #e7f6f2;
+    }
+    .dialogactions #linkcopytext{
+        color:#a5c9ca;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .sharebutton{
+        color: #e7f6f2;
+    }
