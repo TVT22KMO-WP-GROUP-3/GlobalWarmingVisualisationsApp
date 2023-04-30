@@ -18,15 +18,17 @@ export default function AlertDialog(props) {  // Vaihdoin ottamaan tätä kutsuv
         onClose={onClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        
       >
 
-        <DialogContent>
+        <DialogContent className="dialogwindow">
+        
           <DialogContentText id="alert-dialog-description">
             Here is your link to share your view: {props.linkString || "No link available"}
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={onClose}>Close</Button>
+        <DialogActions className="dialogactions">
+          <Button id="closebutton" onClick={onClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </div>
