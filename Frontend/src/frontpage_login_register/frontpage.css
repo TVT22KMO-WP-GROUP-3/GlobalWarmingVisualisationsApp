@@ -114,16 +114,4 @@ justify-content: space-evenly;
 
   }
   
-  .dialogwindow{
-    background-color: #2c3333;
-    }
-    .dialogwindow #alert-dialog-description{
-        color: #e7f6f2;
-    }
-
-    .dialogactions {
-        background-color: #2c3333;
-    }
-    .dialogactions #closebutton{
-        color: #e7f6f2;
-    }
+  

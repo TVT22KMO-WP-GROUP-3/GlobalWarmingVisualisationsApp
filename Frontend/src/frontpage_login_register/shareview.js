@@ -21,14 +21,14 @@ export default function AlertDialog(props) {  // Vaihdoin ottamaan tätä kutsuv
         
       >
 
-        <DialogContent className="dialogwindow">
+        <DialogContent>
         
           <DialogContentText id="alert-dialog-description">
             Here is your link to share your view: {props.linkString || "No link available"}
           </DialogContentText>
         </DialogContent>
-        <DialogActions className="dialogactions">
-          <Button id="closebutton" onClick={onClose}>Close</Button>
+        <DialogActions >
+          <Button  onClick={onClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </div>
