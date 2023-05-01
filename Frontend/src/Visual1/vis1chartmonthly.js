@@ -4,6 +4,7 @@ import { Line } from "react-chartjs-2";
 import "chartjs-adapter-luxon";
 import Popup from "reactjs-popup";
 
+
 const Visual1ChartMonthly = () =>{
     const [visual1MoData, setVisual1MoData] = useState([]);
 

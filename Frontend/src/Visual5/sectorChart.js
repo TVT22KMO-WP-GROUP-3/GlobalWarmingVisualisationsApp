@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Pie, getElementsAtEvent, getElementAtEvent } from "react-chartjs-2";
+import { Pie, getElementsAtEvent} from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./visual5styles.css";
 
 
-const SectorChart = ({exitToMenu}) => {   // ********** esittelyssä mukana mainmenulta saatu funktio exitToMenu !!!
+const SectorChart = () => {   
   const [sectorData, setSectorData] = useState([]);    // sectorin data ja muuttamisfunktio
   const [subSectorData, setSubSectorData] = useState([]);  // subsectorin data ja muuttamisfunktio
   const [selectedSector, setSelectedSector] = useState(null); // valitun sectorin muuttuja ja muuttamisfunktio
@@ -71,7 +71,6 @@ const SectorChart = ({exitToMenu}) => {   // ********** esittelyssä mukana main
 
   const handleSectorClick = (event) => {    // Tämä reagoi donitsin osioiden klikkauksiin
     if(getElementsAtEvent(chartRef.current, event).length > 0) {   // rajaa hutiklikkaukset
-    const activeSectorIndexNum = getElementsAtEvent(chartRef.current, event)[0].datasetIndex; // poista myöhemmin !!!!!!!!!!!!!!!!!!!!!!!!
     const activeSectorIndex = getElementsAtEvent(chartRef.current, event)[0].index;   // älä poista, tällä löytyy labeli arraystä
     const activeSector = sectorData[activeSectorIndex].sector;  // labelin haku indeksillä
     //console.log("activeSectorIndexNum: " + activeSectorIndexNum + " activeSectorIndex: " + activeSectorIndex);  // poista myöh

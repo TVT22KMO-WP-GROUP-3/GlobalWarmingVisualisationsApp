@@ -1,33 +1,33 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useLocation, matchPath } from "react-router-dom";
+import { Link, useNavigate, useLocation,} from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
 
-import { setToken, getToken, clearToken } from "../frontpage_login_register/tokenStorage";
+import { getToken, clearToken } from "../frontpage_login_register/tokenStorage";
 import AlertDialog from "./shareview";
 
 const BrowserBar = () => {
 const [loggedIn, setLoggedIn] = useState(false);
 const [returnData, setReturnData] = useState(null);
 const [displayShareView, setDisplayShareView] = useState(false);
-const [viewString, setViewString] = useState(""); 
+//const [viewString, setViewString] = useState(""); 
 const [link, setLink] = useState('');
 const navigate = useNavigate();
 const location = useLocation();
 const defaultViewCompareString = "0,0,0,0,0,0"; // ohjelma tallentaa näin
 const defaultViewCompareString2 = "000000" // databasen default toiminto tallentaa näin
-
+let Token = getToken();
 
 useEffect(() => {
-    if (getToken() !== null) {
+    if (Token !== null) {
         setLoggedIn(true);
     }
     else {
         setLoggedIn(false);
     }
 }
-, [getToken()]);  // tämän hookin täytyy olla riippuvainen getToken() haun tuloksen muuttumisesta
+, [Token]);  // tämän hookin täytyy olla riippuvainen getToken() haun tuloksen muuttumisesta
 
 
 function createLink(viewID){
@@ -44,7 +44,7 @@ const handleSaveShareClick = async(event) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Bearer ' + getToken(),
+        'Authorization': 'Bearer ' + Token,
       },
         body: `viewID=${viewID}&viewstring=${latestViewString}`
     });
@@ -65,7 +65,7 @@ const handleSaveShareClick = async(event) => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': 'Bearer ' + getToken(),
+          'Authorization': 'Bearer ' + Token,
         },
       });
       const data = await response.text();
@@ -83,7 +83,7 @@ async function checkDefaultView(){   // tarkistaa onko käyttäjällä tallennet
         method: 'GET',  
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Bearer ' + getToken(),
+            'Authorization': 'Bearer ' + Token,
         },
     })
     .then(response => response.text())
@@ -94,7 +94,7 @@ async function checkDefaultView(){   // tarkistaa onko käyttäjällä tallennet
         }
         else{
             navigate("/menu/view");
-            setViewString(data.toString());
+           // setViewString(data.toString());
         }
     })
     .catch((error) => {
@@ -140,7 +140,7 @@ if (loggedIn === false )  {   // vakionäkymän napit
     setReturnData(
     <div className='logobar'>
         <div className="buttons">
-        <Link to ="/"><button className="navbutton">Home</button></Link>
+        <Link to ="/"><button data-testid="sign in" className="navbutton">Home</button></Link>
         <Link to ="/login"><button className="navbutton">Log in</button></Link>
         <Link to ="/register"><button className="navbutton">Sign in</button></Link>
         <Link to ="/showall"><button className="navbutton">Show all</button></Link>

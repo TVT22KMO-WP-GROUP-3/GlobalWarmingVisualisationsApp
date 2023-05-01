@@ -1,12 +1,11 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link, useNavigate  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Visual1 from "../Visual1/visual1.js"; 
 import Visual2 from "../Visual2/visual2Chart";
 import MyVisual3Chart from "../Visual3/visual3Chart";
 import Visual4Chart from "../Visual4/visual4Chart";
 import SectorChart from "../Visual5/sectorChart";
-import ScrollButton from "./scrollButton.js";
+
 
 const ShowAll = () => {
 

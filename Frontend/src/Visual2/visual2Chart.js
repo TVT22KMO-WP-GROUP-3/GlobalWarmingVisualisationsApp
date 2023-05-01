@@ -1,5 +1,5 @@
-import React , {useState, useEffect, useRef} from 'react';  // tarviiko useRef?
-import {Line,getElementAtEvent,getElementsAtEvent} from 'react-chartjs-2';
+import React , {useState, useEffect} from 'react';  // tarviiko useRef?
+import {Line} from 'react-chartjs-2';
 import {Chart as ChartJS,
 CategoryScale,
 LinearScale,
@@ -23,7 +23,7 @@ Legend
 );
 
 
-const Visual2 = ({exitToMenu}) => {
+const Visual2 = () => {
     const [annualChartData, setAnnualChartData] = useState([]);
     const [monthlyChartData, setMonthlyChartData] = useState([]);
     const [iceAge1Data, setIceAge1Data] = useState([]);
@@ -46,10 +46,7 @@ const Visual2 = ({exitToMenu}) => {
       }
       
 
-const handleExitClick = (event) => { //   Mainmenulta perityn exitfunction kutsu
-    //console.log("handleExitClick");
-    exitToMenu();
-}
+
 
  useEffect(() => {   // Kaiken datan haku ja datan muokkaus x ja y arvoiksi, x arvojen muutto ISO muotoiseksi ja järjestys päivämäärän mukaan
     Promise.all([
