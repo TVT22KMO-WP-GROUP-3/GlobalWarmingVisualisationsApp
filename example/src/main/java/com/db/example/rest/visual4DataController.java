@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.db.example.service.Visual4DataService;
 import com.db.example.visual4.visual4Data;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 public class visual4DataController {
 

@@ -12,7 +12,7 @@ import com.db.example.visual3.Gast;
 import com.db.example.visual3.Humanactivities;
 import com.db.example.visual3.Carbon;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 public class visual3restController {
 

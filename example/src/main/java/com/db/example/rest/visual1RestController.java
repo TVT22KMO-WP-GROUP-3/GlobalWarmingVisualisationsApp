@@ -16,7 +16,7 @@ import com.db.example.visual1.shannual;
 import com.db.example.visual1.shmonthly;
 import com.db.example.visual1.visual1;
 
-@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin
 @RestController
 public class visual1RestController {
     
