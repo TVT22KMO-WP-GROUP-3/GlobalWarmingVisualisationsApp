@@ -64,5 +64,6 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(chartjs-adapter-luxon)/)"
     ]
-  }
+  },
+  "homepage": "https://group3climatecharts.onrender.com"
 }
