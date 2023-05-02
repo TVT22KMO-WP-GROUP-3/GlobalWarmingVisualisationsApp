@@ -7,18 +7,23 @@ const RegisterPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [registerSuccess, setRegisterSuccess] = useState(false);
+    const [registerFail, setRegisterFail] = useState(false);
     const navigate = useNavigate();
     
     const handleRegSuccess = () => {
         setRegisterSuccess(true);
     }
 
+    const handleRegFail = () => {
+        setRegisterFail(true);
+    }
+
     const regBtn = async (event) => {
        event.preventDefault();   // event objektista löytyy, estää selaimen sekaantumisen formiin(?) ja sen sijaan mennään omilla toiminnoilla
        console.log("regBtn pressed");
        if(username === "" || password === "") {
-              alert("Username or password missing");
-              return;
+            handleRegFail();
+            return;
          }
          console.log("Registering user " +username);
         await register(username, password);
@@ -41,7 +46,7 @@ const RegisterPage = () => {
             navigate("/login");
             }, 2000);
           } else {
-            alert("Invalid username or username already taken");
+            handleRegFail();
             console.log(response.status);
           }  
     }
@@ -52,27 +57,54 @@ const RegisterPage = () => {
 
     return (
         <div className="frontpage">
-             {registerSuccess ? (
-      <h1 data-testid="regOK">Registration successful!</h1>
-    ) : (
-      <h1>Register and make your own view!</h1>
-    )}
-            <div className="frontpage">
+          {registerSuccess ? (
+            <h1 data-testid="regOK">Registration successful!</h1>
+          ) : (
+            <>
+              {registerFail ? (
+                <h1 data-testid="regFail">Registration failed! Check fields!</h1>
+              ) : (
+                <h1>Register and make your own view!</h1>
+              )}
+            </>
+          )}
+          <div className="frontpage">
             <form onSubmit={regBtn}>
-                <div id="checkboxes" data-testid="username"><label>
-                    Username:
-                    <input type="text" name="username" value={username} onChange={(event)=> setUsername(event.target.value)}/>
-                </label></div>
-                <div id="checkboxes" data-testid="password"><label>
-                    Password:
-                    <input type="password" name="password" value={password} onChange={(event)=> setPassword(event.target.value)} />
-                </label></div>
-                <button id="buttons" data-testid="regbtn" type="submit">Register</button>
+              <div id="checkboxes" >
+                <label>
+                  Username:
+                  <input
+                  data-testid="username"
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={(event) => setUsername(event.target.value)}
+                  />
+                </label>
+              </div>
+              <div id="checkboxes">
+                <label>
+                  Password:
+                  <input
+                    type="password"
+                     data-testid="password"
+                    name="password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                  />
+                </label>
+              </div>
+              <button id="buttons" data-testid="regbtn" type="submit">
+                Register
+              </button>
             </form>
-            <Link to="/"><button id="buttons">Back</button></Link>
-            </div>
+            <Link to="/">
+              <button id="buttons">Back</button>
+            </Link>
+          </div>
         </div>
-    )
+      );
+     
 }
 
 export default RegisterPage;

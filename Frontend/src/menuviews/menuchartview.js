@@ -7,7 +7,6 @@ import Render from "./render.js";
 const ChartView = () => {
 
     const [viewArray, setViewArray] = useState([]);
-    const navigate = useNavigate();
 
 
     useEffect(() => {
