@@ -18,6 +18,7 @@ const location = useLocation();
 const defaultViewCompareString = "0,0,0,0,0,0"; // ohjelma tallentaa näin
 const defaultViewCompareString2 = "000000" // databasen default toiminto tallentaa näin
 let Token = getToken();
+const baseURL = "https://group3climatecharts.onrender.com";
 
 useEffect(() => {
     if (Token !== null) {
@@ -31,7 +32,7 @@ useEffect(() => {
 
 
 function createLink(viewID){
-    return "http://localhost:3000/shared/" + viewID.toString();
+    return "https://group3climatecharts.onrender.com/shared" + viewID.toString();
   }
   
 const handleSaveShareClick = async(event) => { 
@@ -40,7 +41,7 @@ const handleSaveShareClick = async(event) => {
     let viewID = uuidv4(); 
     console.log(viewID);
     console.log(" updaten jälkeen " + latestViewString);
-    const response = await fetch('http://localhost:8080/savedviews', {
+    const response = await fetch('https://group3climatecharts.onrender.com/savedviews', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -61,7 +62,7 @@ const handleSaveShareClick = async(event) => {
 
   async function updateDefaultViewString() {  // palauttaa stringin
     try {
-      const response = await fetch('http://localhost:8080/users/view', {
+      const response = await fetch("https://group3climatecharts.onrender.com/users/view", {
         method: 'GET',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -79,7 +80,7 @@ const handleSaveShareClick = async(event) => {
   
 
 async function checkDefaultView(){   // tarkistaa onko käyttäjällä tallennettua näkymää
-    fetch('http://localhost:8080/users/view', {
+    fetch("https://group3climatecharts.onrender.com/users/view", {
         method: 'GET',  
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

@@ -13,7 +13,7 @@ const SharedView = () => {
     
     useEffect(() => {
         console.log("SharedView.js: ", id);
-        fetch('http://localhost:8080/savedviews/' + id, {
+        fetch("https://group3climatecharts.onrender.com/savedviews" + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

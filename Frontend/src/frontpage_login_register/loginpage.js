@@ -30,7 +30,7 @@ const LoginPage = () => {
     }
 
     async function login(username, password) {
-        const response = await fetch('http://localhost:8080/login', {
+        const response = await fetch("https://group3climatecharts.onrender.com/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const LoginPage = () => {
     }
 
     async function checkDefaultView(){
-        fetch('http://localhost:8080/users/view', {
+        fetch("https://group3climatecharts.onrender.com/users/view", {
             method: 'GET',  
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

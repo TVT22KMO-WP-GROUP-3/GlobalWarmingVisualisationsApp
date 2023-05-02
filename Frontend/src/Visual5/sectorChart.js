@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { Pie, getElementsAtEvent} from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./visual5styles.css";
+import axios from "axios";
+
+const baseURL = "https://group3climatecharts.onrender.com"
 
 
 const SectorChart = () => {   
@@ -43,7 +46,7 @@ const SectorChart = () => {
   ChartJS.register(ArcElement, Tooltip, Legend);
   
   useEffect(() => {    // sectoridatan automaattihaku
-    fetch("http://localhost:8080/sectors")
+    axios.get(`${baseURL}/sectors`)
       .then(response => response.json())
       .then(result => {
         setSectorData(result);
@@ -52,7 +55,7 @@ const SectorChart = () => {
   }, []);
   
   useEffect(() => {   // subsectoridatan automaattihaku
-    fetch("http://localhost:8080/subsectors")
+    axios.get(`${baseURL}/subsectors`)
       .then(response => response.json())
       .then(result => {
         setSubSectorData(result);
@@ -61,7 +64,7 @@ const SectorChart = () => {
   }, []);
 
   useEffect(() => {   // breakdownidatan automaattihaku
-    fetch("http://localhost:8080/breakdowns")
+    axios.get(`${baseURL}/breakdowns`)
       .then(response => response.json())
       .then(result => {
         setBreakdownData(result);

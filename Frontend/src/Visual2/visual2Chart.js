@@ -11,6 +11,8 @@ Legend,} from 'chart.js';
 import Popup from 'reactjs-popup';
 import {DateTime} from 'luxon';
 import './visual2.css';
+import axios from 'axios';
+
 
 ChartJS.register(
 CategoryScale,
@@ -22,6 +24,7 @@ Tooltip,  // hoverinfo
 Legend
 );
 
+const baseURL = "https://group3climatecharts.onrender.com"
 
 const Visual2 = () => {
     const [annualChartData, setAnnualChartData] = useState([]);
@@ -50,7 +53,7 @@ const Visual2 = () => {
 
  useEffect(() => {   // Kaiken datan haku ja datan muokkaus x ja y arvoiksi, x arvojen muutto ISO muotoiseksi ja järjestys päivämäärän mukaan
     Promise.all([
-    fetch("http://localhost:8080/v2annuals")
+        axios.get(`${baseURL}/v2annuals`)
         .then(response => response.json())
         .then(result => {
             let chartData = result.map((item) => ({ x: yearToDate(item.year).toISODate(), y: item.mean }));
@@ -58,7 +61,7 @@ const Visual2 = () => {
             setAnnualChartData(chartData);
         }   
         ),
-    fetch("http://localhost:8080/v2monthlys")
+    axios.get(`${baseURL}/v2monthlys`)
         .then(response => response.json())
         .then(result => {
             let chartData = result.map((item) => ({ x: decimalYearConverter(item.decimalyear).toISODate(), y: item.average }));
@@ -66,7 +69,7 @@ const Visual2 = () => {
             setMonthlyChartData(chartData);
         }
         ),
-    fetch("http://localhost:8080/v2ice_age_1")
+        axios.get(`${baseURL}/v2ice_age_1`)
         .then(response => response.json())
         .then(result => {
             let chartData = result.map((item) => ({ x: yearToDate(item.year).toISODate(), y: item.co2 }));
@@ -74,7 +77,7 @@ const Visual2 = () => {
             setIceAge1Data(chartData);
         }
         ),
-    fetch("http://localhost:8080/v2ice_age_2")
+        axios.get(`${baseURL}/v2ice_age_2`)
         .then(response => response.json())
         .then(result => {
             let chartData = result.map((item) => ({ x: yearToDate(item.year).toISODate(), y: item.co2 }));
@@ -82,7 +85,7 @@ const Visual2 = () => {
             setIceAge2Data(chartData);
         }
         ),
-    fetch("http://localhost:8080/v2ice_age_3")
+        axios.get(`${baseURL}/v2ice_age_3`)
         .then(response => response.json())
         .then(result => {
             let chartData = result.map((item) => ({ x: yearToDate(item.year).toISODate(), y: item.co2 }));

@@ -30,7 +30,7 @@ const RegisterPage = () => {
     }
 
     async function register(username, password) {
-        const response = await fetch('http://localhost:8080/register', {
+        const response = await fetch("https://group3climatecharts.onrender.com/register", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

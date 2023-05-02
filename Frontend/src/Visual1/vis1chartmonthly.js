@@ -3,13 +3,15 @@ import { Chart } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import "chartjs-adapter-luxon";
 import Popup from "reactjs-popup";
+import axios from "axios";
 
+const baseURL = "https://group3climatecharts.onrender.com"
 
 const Visual1ChartMonthly = () =>{
     const [visual1MoData, setVisual1MoData] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:8080/globalmonthly")
+        axios.get(`${baseURL}/globalmonthly`)
         .then(response=>response.json())
         .then(result=>{
             console.log(result);
@@ -22,7 +24,7 @@ const Visual1ChartMonthly = () =>{
 const [nhmonthlyData, setnhmonthlyData] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:8080/nhmonthly")
+        axios.get(`${baseURL}/nhmonthly`)
         .then(response=>response.json())
         .then(result=>{
             console.log(result);
@@ -35,7 +37,7 @@ const [nhmonthlyData, setnhmonthlyData] = useState([]);
 const [shmonthlyData, setshmonthlyData] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:8080/shmonthly")
+        axios.get(`${baseURL}/shmonthly`)
         .then(response=>response.json())
         .then(result=>{
             console.log(result);

@@ -3,13 +3,16 @@ import { Chart } from "chart.js";
 import { Line } from "react-chartjs-2";
 import "chartjs-adapter-luxon";
 import Popup from 'reactjs-popup';
+import axios from "axios";
 
+
+const baseURL = "https://group3climatecharts.onrender.com"
 
 const Visual1Chart = () =>{ //haetaan käyrien tiedot ja muutetaan jsoniksi
     const [visual1Data, setVisual1Data] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:8080/visual1")
+        axios.get(`${baseURL}/visual1`)
         .then(response=>response.json())
         .then(result=>{
             let chartData = result.map((item)=>({x: item.year, y: item.anomaly}));
@@ -24,7 +27,7 @@ const Visual1Chart = () =>{ //haetaan käyrien tiedot ja muutetaan jsoniksi
 const [nhannual1Data, setnhannualData] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:8080/nhannual")
+        axios.get(`${baseURL}/nhannual`)
         .then(response=>response.json())
         .then(result=>{
             let chartData = result.map((item)=>({x: item.year, y: item.anomaly}))
@@ -37,7 +40,7 @@ const [nhannual1Data, setnhannualData] = useState([]);
 const [shannual1Data, setshannualData] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:8080/shannual")
+        axios.get(`${baseURL}/shannual`)
         .then(response=>response.json())
         .then(result=>{
             let chartData = result.map((item)=>({x: item.year, y: item.anomaly}))
@@ -50,7 +53,7 @@ const [shannual1Data, setshannualData] = useState([]);
 const [recoData, setRecoData] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:8080/reconstruction")
+        axios.get(`${baseURL}/reconstruction`)
         .then(response=>response.json())
         .then(result=>{
             let chartData = result.map((item)=>({x: item.year, y: item.value}))

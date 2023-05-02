@@ -81,7 +81,7 @@ const DefaultMenu = () => {
         if(view[0]+view[1]+view[2]+view[3]+view[4] !== 0){
         let viewString = view.toString();
         console.log(viewString);
-        fetch('http://localhost:8080/users/view', {
+        fetch("https://group3climatecharts.onrender.com/users/view", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -124,7 +124,7 @@ const myPopup = (deleteAccountHandler) => (
 
 
     const deleteAccountHandler = async (event) => {
-        const response = await fetch('http://localhost:8080/users/', {
+        const response = await fetch("https://group3climatecharts.onrender.com/users", {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -144,7 +144,7 @@ const myPopup = (deleteAccountHandler) => (
     
 
     const deleteViewHandler = async (event) => {
-         const response = await fetch('http://localhost:8080/users/view', {
+         const response = await fetch("https://group3climatecharts.onrender.com/users/view", {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

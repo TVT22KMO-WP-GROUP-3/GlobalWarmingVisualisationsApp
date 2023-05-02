@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import Popup from "reactjs-popup";
+import axios from "axios";
+
+const baseURL = "https://group3climatecharts.onrender.com"
 
 const MyVisual3Chart = () => {
   const [carbonData, setCarbonData] = useState([]);
@@ -11,21 +14,21 @@ const MyVisual3Chart = () => {
   const [showHumanActions, setShowHumanActions] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8080/carbon")
+    axios.get(`${baseURL}/carbon`)
       .then(response => response.json())
       .then(result => {
         setCarbonData(result);
       })
       .catch(error => console.log(error));
 
-    fetch("http://localhost:8080/gast")
+      axios.get(`${baseURL}/gast`)
       .then(response => response.json())
       .then(result => {
         setGastData(result);
       })
       .catch(error => console.log(error));
 
-    fetch("http://localhost:8080/humanactivities")
+      axios.get(`${baseURL}/humanactivities`)
       .then(response => response.json())
       .then(result => {
         setHumanData(result);

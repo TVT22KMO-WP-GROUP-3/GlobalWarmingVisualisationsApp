@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Chart } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import Popup from 'reactjs-popup';
+import axios from 'axios';
+
+const baseURL = "https://group3climatecharts.onrender.com"
 
 const Visual4Chart = () => {
   const [chartData, setChartData] = useState(null);
@@ -13,7 +16,7 @@ const Visual4Chart = () => {
   useEffect(() => {
     const fetchDataAndCreateChart = async () => {
       try {
-        const response = await fetch('http://localhost:8080/v4data');
+        const response = await axios.get(`${baseURL}/v4data`);
         const rawData = await response.text();
 
         const lastChar = rawData[rawData.length - 1];
