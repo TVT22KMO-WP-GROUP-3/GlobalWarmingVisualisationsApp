@@ -23,7 +23,7 @@ const DefaultMenu = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:8080/users/view', {
+        fetch("https://group3climatecharts.onrender.com/users/view", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
