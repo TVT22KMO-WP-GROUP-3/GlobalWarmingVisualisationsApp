@@ -199,6 +199,7 @@ const myPopup = (deleteAccountHandler) => (
         </div>
         <div id="buttongroup">
             <button onClick={callRender}>Save&Show view</button>
+            <Link to = "/menu/view"><button>Back</button></Link>
         </div>
         </div>
     )
