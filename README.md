@@ -5,7 +5,7 @@ Tämä on ryhmän numero 3 esittelyteksti kevään 2023 web-ohjelmoinnin sovellu
 Projektin ensimmäisillä viikoilla kaikille jaettiin tehtäväksi tutustua Reactin kaavioihin, jaettiin viiden eri kaavioinnin visualisointien toteutus, tutustuttiin ja kerättiin data tietokantaan. Samassa alettiin käyttämään kanban-mallia työtehtävien jakoon. Kanban-mallia pidettiin mahdollisimman ajantasalla ja sinne lisättiin tehtäviä sitä mukaa, kun niitä suunniteltiin. Tehtävän perään kirjattiin oma nimi, kun otti sen työn alle.
 
 ### Teron (t1rate01) vastuualueet
-Teron vastuut alkoi alussa visualisoinnilla 5, ja kaiken tietokantaan päätyvän datan keräämisen ja sopivaan muotoon kääntämisen parissa Janitan kanssa. Seuraavaksi käyttöliittymän logiikan suunnittelua ja visualisointi 2. Omiin visualisointeihin liittyvät backend ja frontend toiminnallisuudet ja alustava html/css muotoilu.  
+Teron vastuut alkoivat alussa visualisoinnilla 5, ja kaiken tietokantaan päätyvän datan keräämisen ja sopivaan muotoon kääntämisen parissa Janitan kanssa. Seuraavaksi käyttöliittymän logiikan suunnittelua ja visualisointi 2. Omiin visualisointeihin liittyvät backend ja frontend toiminnallisuudet ja alustava html/css muotoilu.  
 
 Kun käyttöliittymästä oli karkea demo valmis, siirtyi tekemään käyttäjien rekisteröintiin, kirjautumiseen, autentikointiin ja poistoon tarvittavat backend-toiminnot. Tämän jälkeen lyötiin lopullinen käyttöliittymäsuunnitelma lukkoon, Janita toteutti suunnitelman kaavion piirron ja Tero toteutti logiikan, jolla käyttöliittymässä liikuttiin ja toimittiin. Tämän jälkeen rekisteröinti, kirjautuminen ja valikot frontendissä, sekä komponentti, joka käyttäjän asetusten mukaan tuo halutut visualisoinnit näkymään, jaettavan linkin logiikka, linkin mukaan toimiva komponentti ja meidän "browserbariksi" nimeämä komponentti joka valvoo mm. käyttäjän kirjautumisen tilaa ja sallii/siirtää sivujen välillä ja näyttää ehtojen mukaan tiettyjä nappeja.  
 
@@ -13,15 +13,15 @@ Projektin lopussa auttoi Alisaa backendin testauskoodien kanssa ja toteutti fron
 Tarjosi tukea muille ohjelmoinnissa.  
   
 ### Janitan (*saattaja*) vastuualueet
-Janitan vastuut alkoi visuaaleilla 1, 2 ja PostqreSQL-tietokannan perustaminen ja kaiken datan hallinnointi ja kääntäminen. Datan keruu ja oikeaan muotoon kääntäminen vei paljon aikaa, joten töitä jaettiin ja tehtiin yhteistyössä Teron kanssa. Piti myös yllä kanban-mallia ja siellä olevia tehtäviä.  
+Janitan vastuut alkoivat visuaaleilla 1, 2 ja PostqreSQL-tietokannan perustaminen ja kaiken datan hallinnointi ja kääntäminen. Datan keruu ja oikeaan muotoon kääntäminen vei paljon aikaa, joten töitä jaettiin ja tehtiin yhteistyössä Teron kanssa. Piti myös yllä kanban-mallia ja siellä olevia tehtäviä.  
   
-Omaan visualisointiin backend rest-toiminnot ja frontend toteutukset. Visualisoinnissa data on jaettu kahteen kaavioon, kuukausittainen ja vuosittainen, joita voi vaihdella radionappeja käyttäen. Vuosikaavio sisältää myös "Temperature reconstruction"-datan. 
+Tehtäväksi jäi visual 1 backend rest-toiminnot ja frontend toteutukset. Visualisoinnissa lämpötiladata on jaettu kahteen kaavioon, kuukausittainen ja vuosittainen, joita voi vaihdella radionappeja käyttäen. Vuosikaavio sisältää myös "Temperature reconstruction"-datan. 
   
-Käyttöliittymäsuunnitelman ensimmäisen karkean vaiheen suunnittelu ryhmän kanssa ja alustavat kaaviot. Myöhemmin lopullisen käyttöliittymän ja sen logiikan suunnittelu Teron kanssa ja siitä kaavion teko. Toteutti myös RESTAPI-kaavion/suunnitelman.  
+Janita teki käyttöliittymäsuunnitelman ensimmäisen karkean vaiheen suunnittelun ryhmän kanssa ja alustavat kaaviot. Myöhemmin lopullisen käyttöliittymän ja sen logiikan suunnittelu Teron kanssa ja siitä kaavion teko. Toteutti myös RESTAPI-kaavion/suunnitelman.  
   
 Suurin osa koko projektin lopullisista html/css muotoiluista yhtenäiseksi kuului myös Janitalle.  
   
-Alustavat deployment testailut.  
+Testasi deploymenttia, mutta vain backend osuus onnistui, joten tämä vaihe jäi muille lopullisesti. 
   
 ### Alisan (*akulonpa*) vastuualueet
 Alisa toimi alussa ensisijaisena muistiinpanojen kerääjänä palavereissa, teki palaveritaulukot joilla seurattiin aikoja, jolloin kukin on vapaa esim. palaverinpitoon. 
@@ -37,7 +37,7 @@ Visualisointi 4 sisältää kaavion jolla kuvataan jokaisen maan valtiolta kerä
   
 Osallistui eri popupikkunoiden ja jakotoimintojen toteutukseen.  
 
-Alustavat deployment testailut.  
+Testasi ja auttoi sovelluksen deployment-vaiheessa.
   
 ## Sovelluksen käyttö
 ![Photo](https://github.com/TVT22KMO-WP-GROUP-3/R3-Projekti/blob/t1rate01-deploymenfromMainAsItIs/photosForReadMe/kaytto1.png?raw=true)
