@@ -64,13 +64,13 @@ Arvottua näkymää ja käyttäjän valitsemien näkymien näyttämistä varten 
 
 Valikossa, jossa näkymiä luodaan, käytetään checkboxeja joilla käännetään taulukon lukuja vastaavilla indexeillä nolla ykköseksi ja tallennuksen yhteydessä se tallennetaan ja välitetään renderille. 
 
-Linkin jakonappia painaessa ohjelma luo satunnaisen id:n ja tallentaa sen tietokantaan tokenilla autentikoituna sille tarkoitettuun tauluun. Backend purkaa tokenista myös käyttäjän käyttäjänimen, jolloin linkin käyttäjän mennessä katsomaan linkin näkymää, voidaan tässä näyttää keneltä näkymä on. Linkki ohjaa frontendissa komponenttiin, joka purkaa urlin perästä id:n ja hakee sen perusteella tietokannasta näkymän samassa kuusinumeroisessa muodossa joka syötetään samaan renderiin ja käyttäjänimen, joka näytetään myös.
+Linkin jakonappia painaessa ohjelma luo satunnaisen id:n ja tallentaa sen tietokantaan tokenilla autentikoituna sille tarkoitettuun tauluun. Backend purkaa tokenista myös käyttäjän käyttäjänimen, jolloin linkin käyttäjän mennessä katsomaan linkin näkymää, voidaan näyttää, keneltä näkymä on. Linkki ohjaa frontendissa komponenttiin, joka purkaa urlin perästä id:n ja hakee sen perusteella tietokannasta näkymän samassa kuusinumeroisessa muodossa, joka syötetään samaan renderiin ja käyttäjänimen, joka näytetään myös.
 
 Jokainen visualisointi hakee tietokannasta niille yksilöidysti tehdyistä rest päätteistä tietonsa. Visualisoinnit ovat peruslogiikaltaan samanlaisia, osa kaavioista on esimerkiksi viivakaavioita tai piirakkakaavioita, joissa ohjelmalliset erot tulevat. Esimerkkinä visualisointi 1, joka ensimmäisenä Reactin useEffect ja useState hookkeja hyödyntäen hakee tarvitsemansa datan taulukkomuodossa, käyttää .map toimintoa sen uudelleenjärjestelyyn, tässä tapauksessa x ja y arvoihin kyseisen kaavion akseleita varten.
 
 ![Photo](https://github.com/TVT22KMO-WP-GROUP-3/R3-Projekti/blob/t1rate01-deploymenfromMainAsItIs/photosForReadMe/visu1.png?raw=true)  
 
-Kyseisessä visualisoinnissa on haluttu tarjota kahta erilaista viivakaaviota valittavaksi, joten varsinaisella visual1.js komponentilla palautetaan radionappien kanssa ehdollisesti molempien kaavioiden komponenttien kutsu, mutta vain toinen näkyy kerrallaan. Itse ohjelma kutsuu tämän kohdalla visual1.jssää.  
+Yllä olevassa visualisoinnissa on haluttu tarjota kahta erilaista viivakaaviota valittavaksi, joten varsinaisella visual1.js komponentilla palautetaan radionappien kanssa ehdollisesti molempien kaavioiden komponenttien kutsu, mutta vain toinen näkyy kerrallaan. Itse ohjelma kutsuu tämän kohdalla visual1.jssää.  
   
 Sovelluksen backend sisältää visuaalikomponenteille jokaiselle yksilöidyt restcontrollerit serviceluokkineen. Lisäksi backendiin on tehty käyttäjän kirjautumista varten käyttäjien rest ja servicecontrollerit, sekä autentikointiin liittyvät servicet ja toiminnot.
 
